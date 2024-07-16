@@ -53,7 +53,6 @@ open class Aquarium(open var length: Int = 100,open var width: Int = 20, open va
      */
     open var volume: Int
         get() = width * height * length / 1000
-        //set(value){
         // private: Solo es visible en esta propia clase
         // protected: Igual que private, pero tambien sera visible en las subclases
         // internal: Solo sera visible dentro del mismo package
