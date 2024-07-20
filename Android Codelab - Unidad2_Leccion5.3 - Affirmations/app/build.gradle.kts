@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.tiptime"
+    namespace = "com.example.affirmations"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.tiptime"
+        applicationId = "com.example.affirmations"
         minSdk = 21
         targetSdk = 34
         versionCode = 1
@@ -33,12 +33,6 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-
-    buildFeatures{
-        viewBinding = true
-    }
-
-
 }
 
 dependencies {
