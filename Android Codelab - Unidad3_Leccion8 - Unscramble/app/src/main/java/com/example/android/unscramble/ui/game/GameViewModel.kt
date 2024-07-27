@@ -19,6 +19,24 @@ class GameViewModel : ViewModel() {
     val currentScrambleWord: LiveData<String>
         get() = _currentScrambledWord
 
+    /* En el caso de que se quiera implementar funcionalidades TalkBack
+        private val _currentScrambledWord = MutableLiveData<String>()
+    val currentScrambleWord: LiveData<Spannable> = Transformations.map(_currentScrambledWord) { scrambledWord ->
+        if (scrambledWord.isNullOrEmpty()) {
+            SpannableString("")
+        } else {
+            val spannable = SpannableString(scrambledWord)
+            spannable.setSpan(
+                TtsSpan.VerbatimBuilder(scrambledWord).build(),
+                0,
+                scrambledWord.length,
+                Spannable.SPAN_INCLUSIVE_INCLUSIVE
+            )
+            spannable
+        }
+    }
+     */
+
     private var wordsList: MutableList<String> = mutableListOf()
     private lateinit var currentWord: String
 

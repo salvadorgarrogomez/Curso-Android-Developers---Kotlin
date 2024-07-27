@@ -71,7 +71,8 @@ class GameFragment : Fragment() {
         // Setup a click listener for the Submit and Skip buttons.
         binding.submit.setOnClickListener { onSubmitWord() }
         binding.skip.setOnClickListener { onSkipWord() }
-        // Observe the currentScrambledWord LiveData, passing in the LifecycleOwner and the observer
+        // Al aplicar el layout <data> en el .xml, se puede conseguir el mismo funcionamiento que el descrito en las siguientes lineas
+        /* Observe the currentScrambledWord LiveData, passing in the LifecycleOwner and the observer
         viewModel.currentScrambleWord.observe(viewLifecycleOwner
         ) { newWord ->
             binding.textViewUnscrambledWord.text = newWord
@@ -84,6 +85,8 @@ class GameFragment : Fragment() {
         ) { newWordCount ->
             binding.wordCount.text = getString(R.string.word_count, newWordCount, MAX_NO_OF_WORDS)
         }
+
+         */
     }
 
     /*
