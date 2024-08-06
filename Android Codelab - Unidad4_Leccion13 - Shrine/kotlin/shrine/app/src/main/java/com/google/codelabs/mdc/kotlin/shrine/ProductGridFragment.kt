@@ -43,6 +43,35 @@ class ProductGridFragment : Fragment() {
 
         return view
     }
+    /*
+        override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View? {
+        _binding = ShrProductGridFragmentBinding.inflate(inflater, container, false)
+        val view = binding.root
+
+        // Configura el RecyclerView con el nuevo GridLayoutManager y SpanSizeLookup
+        binding.recyclerView.setHasFixedSize(true)
+        val gridLayoutManager = GridLayoutManager(context, 2, RecyclerView.HORIZONTAL, false)
+        gridLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+            override fun getSpanSize(position: Int): Int {
+                return if (position % 3 == 2) 2 else 1
+            }
+        }
+        binding.recyclerView.layoutManager = gridLayoutManager
+
+        // Asume que ProductEntry.initProductEntryList es un método que retorna una lista de productos
+        val adapter = StaggeredProductCardRecyclerViewAdapter(ProductEntry.initProductEntryList(resources))
+        binding.recyclerView.adapter = adapter
+
+        // Configura el espaciado entre los items
+        val largePadding = resources.getDimensionPixelSize(R.dimen.shr_staggered_product_grid_spacing_large)
+        val smallPadding = resources.getDimensionPixelSize(R.dimen.shr_staggered_product_grid_spacing_small)
+        binding.recyclerView.addItemDecoration(ProductGridItemDecoration(largePadding, smallPadding))
+
+        return view
+    }
+     */
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
