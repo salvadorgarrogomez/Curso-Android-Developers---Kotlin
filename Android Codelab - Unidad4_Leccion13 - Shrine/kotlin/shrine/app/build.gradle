@@ -3,14 +3,13 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-parcelize'
 
 android {
-    // Linea modificada, la version en GitHub estaba desactualizada
     namespace 'com.google.codelabs.mdc.kotlin.shrine'
 
-    compileSdkVersion 34  // Actualizado a 34 o la versión más reciente
+    compileSdkVersion 34
     defaultConfig {
         applicationId "com.google.codelabs.mdc.kotlin.shrine"
-        minSdkVersion 19  // Asegúrate de que sea compatible con las dependencias
-        targetSdkVersion 34  // Actualizado a 34 o la versión más reciente
+        minSdkVersion 19
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -19,30 +18,31 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    // Se añaden estas lineas, la version en GitHub estaba desactualizada
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
-
     kotlinOptions {
         jvmTarget = "17"
     }
+    viewBinding {
+        enabled = true
+    }
 }
 
-
 dependencies {
-    api 'com.google.android.material:material:1.12.0'
+    implementation 'com.google.android.material:material:1.12.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.android.volley:volley:1.2.1'
     implementation 'com.google.code.gson:gson:2.10'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test:core:1.6.1'
     androidTestImplementation 'androidx.test.ext:junit:1.2.1'
     androidTestImplementation 'androidx.test:runner:1.6.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
 }
+

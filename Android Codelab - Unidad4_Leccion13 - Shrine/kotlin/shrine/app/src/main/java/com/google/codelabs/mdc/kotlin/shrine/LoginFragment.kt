@@ -31,6 +31,8 @@ class LoginFragment : Fragment() {
                 passwordTextInput.error = getString(R.string.shr_error_password)
             } else {
                 passwordTextInput.error = null
+                // Importante!!! Para navegar al siguiente fragment tras darle al boton de Next y validarse el formato de la contraseña
+                (activity as NavigationHost).navigateTo(ProductGridFragment(), false)
             }
         }
         passwordEditText.setOnKeyListener { _, _, _ ->
@@ -46,4 +48,5 @@ class LoginFragment : Fragment() {
     private fun isPasswordValid(text: Editable?): Boolean{
         return text != null && text.length >= 8
     }
+
 }
